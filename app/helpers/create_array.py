@@ -4,7 +4,8 @@ import pandas as pd
 import os
 from datetime import datetime
 
-paths = glob.glob('/home/marten/Desktop/workdir/gans/app-dev/notebooks/2*/*/*.npy')
+paths = list(sorted(glob.glob('/home/marten/Desktop/workdir/bkp_gan/data_raw//2*/*/*.npy')))
+#print('/home/marten/Desktop/workdir/bkp_gan/data_raw//2*/*/*.npy')
 
 def pre_process_imgs(path):
     image = np.load(path)
