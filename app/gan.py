@@ -1,7 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Sequential
-from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import Adam
 
 # define the combined generator and discriminator model, for updating the generator
 def define_gan(generator, discriminator):

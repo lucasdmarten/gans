@@ -2,7 +2,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D ,LeakyReLU ,Flatten ,Dense
 from tensorflow.keras.initializers import RandomNormal
-from tensorflow.keras.optimizer import Adam
+from tensorflow.keras.optimizers import Adam
 
 
 # define the standalone discriminator model
