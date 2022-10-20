@@ -30,7 +30,7 @@ def pad_seq_tokenizier(sentences):
 	)
 	return sequences
 
-df = pd.read_csv('/home/marten/Desktop/workdir/bkp_gan/app2/helpers/mean_sea_level.csv')
+df = pd.read_csv('/bkp_gan/app2/helpers/mean_sea_level.csv')
 img_paths = list(sorted(glob.glob('/home/marten/Desktop/workdir/gans/data/*/*/*.npy')))
 
 for img_path in img_paths:
@@ -40,7 +40,8 @@ for img_path in img_paths:
 
 	df_dates = pd.read_csv(img_path.replace('.npy','.csv'))['dates'].to_list()
 	date_i, date_f = df_dates[0], df_dates[-1]
-	sentences = df[(df['dates'] >= date_i)&(df['dates']<=date_f)]['text_mean_sea_level'].to_list()
+	print(date_i, date_f)
+	sentences = df[(df['dates'] >= date_i)&(df['dates']<date_f)]['text_mean_sea_level'].to_list()
 	sequences = pad_seq_tokenizier(sentences)
 
 	file_out = f"{path}/msl_{fname.replace('.npy','.arr.npy')}"; print(file_out)
